@@ -1,0 +1,5 @@
+*.json
+json
+__pycache__/
+.env
+config.py
