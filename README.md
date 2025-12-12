@@ -11,7 +11,7 @@
 
 ## 🏗️ Arquitetura da Solução
 
-[Diagrama da Arquitetura]
+Diagrama da Arquitetura
 
 <img width="1050" height="600" alt="arquitetura png" src="https://github.com/user-attachments/assets/6326b1ea-ebac-4291-a623-0829c8bf47c6" />
 
@@ -78,9 +78,14 @@ Snippet de código
 GOOGLE_APPLICATION_CREDENTIALS="caminho/para/sua-chave-gcp.json"
 PROJECT_SALT_KEY="SuaChaveSecreta"
 GCP_PROJECT_ID="seu-id-do-projeto-gcp"
-Execute o Pipeline
 
-📄 Artigo Detalhado
+```
+
+
+
+
+## 📄 Artigo Detalhado
+
 Escrevi um artigo completo no Medium explicando a lógica por trás da decisão de usar Hashing com Sal e como configurei o IAM no GCP.
 
-[👉 Leia o Artigo Completo Aqui](https://medium.com/@joaopedrog.pin/como-constru%C3%AD-um-pipeline-de-dados-de-sa%C3%BAde-%C3%A0-prova-de-lgpd-e-hipaa-usando-python-e-google-cloud-789a93c66ee6?postPublishedType=initial)
+👉 [Leia o Artigo Completo Aqui](https://medium.com/@joaopedrog.pin/como-constru%C3%AD-um-pipeline-de-dados-de-sa%C3%BAde-%C3%A0-prova-de-lgpd-e-hipaa-usando-python-e-google-cloud-789a93c66ee6?postPublishedType=initial)
