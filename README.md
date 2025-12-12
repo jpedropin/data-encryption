@@ -70,11 +70,6 @@ git clone https://github.com/jpedropin/data-encryption.git
 cd data-encryption
 Instale as dependências
 
-Bash
-
-pip install pandas pandas-gbq faker python-dotenv google-cloud-bigquery
-Configure as Variáveis de Ambiente Crie um arquivo .env na raiz do projeto e adicione:
-
 Snippet de código
 
 GOOGLE_APPLICATION_CREDENTIALS="caminho/para/sua-chave-gcp.json"
@@ -82,9 +77,6 @@ PROJECT_SALT_KEY="SuaChaveSecreta"
 GCP_PROJECT_ID="seu-id-do-projeto-gcp"
 Execute o Pipeline
 
-Bash
-
-python src/main.py
 📄 Artigo Detalhado
 Escrevi um artigo completo no Medium explicando a lógica por trás da decisão de usar Hashing com Sal e como configurei o IAM no GCP.
 
