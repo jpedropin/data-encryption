@@ -11,7 +11,7 @@
 
 ## 🏗️ Arquitetura da Solução
 
-![Diagrama da Arquitetura](arquitetura.png)
+[Diagrama da Arquitetura](<img width="1050" height="600" alt="arquitetura png" src="https://github.com/user-attachments/assets/a14d7d65-95c3-4565-ae30-3fc310f53c33" />)
 
 O fluxo de dados segue os princípios de **Privacy by Design**: o dado sensível é tratado em memória e jamais é persistido no Data Warehouse em sua forma original.
 
@@ -80,4 +80,4 @@ Execute o Pipeline
 📄 Artigo Detalhado
 Escrevi um artigo completo no Medium explicando a lógica por trás da decisão de usar Hashing com Sal e como configurei o IAM no GCP.
 
-👉 Leia o Artigo Completo Aqui
+[👉 Leia o Artigo Completo Aqui](https://medium.com/@joaopedrog.pin/como-constru%C3%AD-um-pipeline-de-dados-de-sa%C3%BAde-%C3%A0-prova-de-lgpd-e-hipaa-usando-python-e-google-cloud-789a93c66ee6?postPublishedType=initial)
