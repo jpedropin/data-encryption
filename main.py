@@ -42,7 +42,7 @@ df_saude['Age Range'] = df_saude['Age'].apply(lambda x: f"{int(x)//10*10}-{int(x
 #4 - DINHEIRO - ARREDONDANDO VALORES GRANDES 
 df_saude['Billing Amount'] = df_saude['Billing Amount'].round(0).astype(int)
 
-#Removendo a coluna "AGE" e ajeitando a ordem
+#Removendo a coluna "AGE" e ajeitando a ordem de exibição
 df_saude = df_saude.drop(columns=['Age'])
 nova_ordem = [
     'Patient_ID_Hashed',
@@ -63,7 +63,7 @@ nova_ordem = [
     'Test Results'
 ]
 df_saude = df_saude[nova_ordem]
-df_saude.columns = df_saude.columns.str.replace(' ', '_')
+df_saude.columns = df_saude.columns.str.replace(' ', '_') #Pra nao dar problema no looker
 
 print("\n--- REGRAS DE ANONIMIZAÇÃO APLICADAS ---")
 print("✅ Coluna 'Name': Mascarada (3 primeiros caracteres + ***)")
