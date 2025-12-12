@@ -1,19 +1,31 @@
 import kagglehub
 import pandas as pd
 import os
+import hashlib
+from faker import Faker 
 
 import config 
-from gbq_connector import bigquery #Importando de config.py
+from gbq_connector import bigquery #Importando de config.py aqui pra main
 
-# Configura visualização no VSCode
-# pd.set_option('display.max_columns', None)
-# pd.set_option('display.width', 1000)
+# Configuração do faker - para criar um ID falso para cada paciente (Afim de adicionar mais complexidade no projeto)
+fake = Faker('en_US')
+SALT = "Hospit@l_Segur0!"
 
-# Baixa o dataset de Saúde
+# Baixando o dataset de Saúde
 path = kagglehub.dataset_download("prasad22/healthcare-dataset")
 import os
 csv_path = os.path.join(path, "healthcare_dataset.csv")
 df_saude = pd.read_csv(csv_path)
+
+df_saude['SSN_Real'] = [fake.ssn() for _ in range(len(df_saude))]
+
+# Aplicando o Hash
+def aplicar_hash(valor_real):
+    valor_com_sal = str(valor_real) + SALT
+    return hashlib.sha256(valor_com_sal.encode()).hexdigest()
+
+# Cria a coluna blindada (Hash)
+df_saude['Patient_ID_Hashed'] = df_saude['SSN_Real'].apply(aplicar_hash)
 
 #Regras de Anonimização
 
@@ -33,6 +45,7 @@ df_saude['Billing Amount'] = df_saude['Billing Amount'].round(0).astype(int)
 #Removendo a coluna "AGE" e ajeitando a ordem
 df_saude = df_saude.drop(columns=['Age'])
 nova_ordem = [
+    'Patient_ID_Hashed',
     'Name', 
     'Age Range',      
     'Gender', 
@@ -50,11 +63,6 @@ nova_ordem = [
     'Test Results'
 ]
 df_saude = df_saude[nova_ordem]
-
-# print("--- DADOS ORIGINAIS (COM RISCO DE PRIVACIDADE) ---")
-# print(df_saude.head())
-# print("\n--- Informações das Colunas ---")
-# print(df_saude.info())
 
 print("\n--- REGRAS DE ANONIMIZAÇÃO APLICADAS ---")
 print("✅ Coluna 'Name': Mascarada (3 primeiros caracteres + ***)")
