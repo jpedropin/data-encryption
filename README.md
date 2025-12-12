@@ -11,7 +11,10 @@
 
 ## 🏗️ Arquitetura da Solução
 
-[Diagrama da Arquitetura](<img width="1050" height="600" alt="arquitetura png" src="https://github.com/user-attachments/assets/a14d7d65-95c3-4565-ae30-3fc310f53c33" />)
+[Diagrama da Arquitetura]
+
+<img width="1050" height="600" alt="arquitetura png" src="https://github.com/user-attachments/assets/6326b1ea-ebac-4291-a623-0829c8bf47c6" />
+
 
 O fluxo de dados segue os princípios de **Privacy by Design**: o dado sensível é tratado em memória e jamais é persistido no Data Warehouse em sua forma original.
 
