@@ -63,6 +63,7 @@ nova_ordem = [
     'Test Results'
 ]
 df_saude = df_saude[nova_ordem]
+df_saude.columns = df_saude.columns.str.replace(' ', '_')
 
 print("\n--- REGRAS DE ANONIMIZAÇÃO APLICADAS ---")
 print("✅ Coluna 'Name': Mascarada (3 primeiros caracteres + ***)")
